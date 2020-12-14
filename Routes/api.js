@@ -2,15 +2,11 @@
 const Router = require('express').Router();
 const { body, validationResult } = require('express-validator');
 
-const AppointmentController = require('../Controller/AppointmentController')
+const BlogController = require('../Controller/BlogController')
 
-Router.get('/appointments',AppointmentController.getAppointments)
-Router.get('/slots',AppointmentController.getSlots)
-Router.post('/appointment',AppointmentController.createAppointment)
-Router.post('/slot',AppointmentController.createSlot)
-
-
-
-
+Router.get('/blogs',BlogController.getBlogs)
+Router.post('/blog',BlogController.createBlog)
+Router.post('/comment',BlogController.createBlogComment)
+Router.get('/comment/:blogId',BlogController.getComments)
 
 module.exports = Router;

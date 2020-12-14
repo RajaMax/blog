@@ -54,3 +54,12 @@ exports.validationError = function (res,msg) {
 	};
 	return res.status(400).json(resData);
 };
+
+exports.notFoundResponse = function (res, msg) {
+	var data = {
+		status: 0,
+		responseCode: 404,
+		message: msg,
+	};
+	return res.status(404).json(data);
+};
